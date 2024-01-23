@@ -1,6 +1,6 @@
 import styles from "./InputOnePersonForm.module.css";
 
-interface IInputOnePersonProps {
+export interface IInputOnePersonProps {
     deletePersonHandler: (id: number) => void;
     inputOnePersonNameHanlder: (e: React.ChangeEvent<HTMLInputElement>) => void;
     inputOnePersonSumHanlder: (e: React.ChangeEvent<HTMLInputElement>) => void;
