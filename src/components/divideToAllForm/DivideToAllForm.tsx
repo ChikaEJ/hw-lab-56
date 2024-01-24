@@ -16,21 +16,27 @@ const DivideToAllForm: React.FC<IDivideToAllFormProps> = (
         inputDivideToAllHandler, 
         divideToAllInputValue 
     }) => {
+
+        const containerLabalClass = ['label', styles.billingType].join(' ');
     return (
         <div className={styles.container} >
             <form className={styles.billingType} onSubmit={(e) => submitDivideToAllForm(e)}>
-                <label className='label'>Человек:
+                <label className={containerLabalClass}>Человек:
                     <input type="number" name="persons" onChange={(e) => inputDivideToAllHandler(e)} value={divideToAllInputValue.perosns} />
-                </label>
-                <label className='label'>Сумма заказа:
+                    
+                </label>чел.
+                <label className={containerLabalClass} >Сумма заказа:
                     <input type="number" name="sumOfOrder" onChange={(e) => inputDivideToAllHandler(e)} value={divideToAllInputValue.sumOfOrder} />
-                </label>
-                <label className='label'>Процент чаевых:
+                    
+                </label>тенге
+                <label className={containerLabalClass}>Процент чаевых:
                     <input type="number" name="tipsPercent" onChange={(e) => inputDivideToAllHandler(e)} value={divideToAllInputValue.tipsPercent} />
-                </label>
-                <label className='label'>Доставка:
+                    
+                </label>%
+                <label className={containerLabalClass}>Доставка:
                     <input type="number" name="delivery" onChange={(e) => inputDivideToAllHandler(e)} value={divideToAllInputValue.delivery} />
-                </label>
+                    
+                </label>тенге
 
                 <button type="submit" > Рассчитать</button>
             </form>

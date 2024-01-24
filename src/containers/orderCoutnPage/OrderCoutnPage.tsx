@@ -51,8 +51,8 @@ const OrderCountPage: React.FC = () => {
     }
 
     const submitDivideToAllForm: React.FormEventHandler<HTMLFormElement> = (e) => {
-        setShowInfo("show");
         e.preventDefault();
+        if(divideToAllInputsValues.sumOfOrder) setShowInfo("show");
     }
 
 
