@@ -1,0 +1,10 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.billingType {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 5px;
+}

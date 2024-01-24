@@ -8,15 +8,17 @@ interface IRadioButtonProps{
 
 const RadioButtons: React.FC<IRadioButtonProps> = ({options, radioDivideToAll, radioDivideByPerson }) => {
     return (
-        <div>
-            <h3>Сумма заказа считаеться: </h3>
-            <label> Поровну между всеми участниками. 
+        <div className={styles.wraper}>
+            <div className={styles.flexColumn}>
+            <h3>Сумма заказа: </h3>
+            <label className='label'> Поровну между всеми участниками. 
                 <input type="radio" value="divide to all" checked={options.divideToAllOption} onChange={radioDivideToAll} />
             </label>  
-            <label> Каждому иднивидуально: 
+            <label className='label'> Каждому иднивидуально: 
                 <input type="radio" value="divide by persons" checked={options.divideByPersonOption} onChange={radioDivideByPerson} />
             </label>
 
+        </div>
         </div>
     )
 }

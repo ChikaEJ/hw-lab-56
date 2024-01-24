@@ -1,4 +1,4 @@
-import styles from "./DivideToAll.module.css";
+import styles from "./DivideToAllForm.module.css";
 interface IDivideToAllFormProps {
     submitDivideToAllForm: (e: React.FormEvent<HTMLFormElement>) => void;
     inputPersonsHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -23,18 +23,18 @@ const DivideToAllForm: React.FC<IDivideToAllFormProps> = (
         divideToAllInputValue 
     }) => {
     return (
-        <div>
-            <form onSubmit={(e) => submitDivideToAllForm(e)}>
-                <label>Человек:
+        <div className={styles.container} >
+            <form className={styles.billingType} onSubmit={(e) => submitDivideToAllForm(e)}>
+                <label className='label'>Человек:
                     <input type="number" onChange={(e) => inputPersonsHandler(e)} value={divideToAllInputValue.perosns} />
                 </label>
-                <label>Сумма заказа:
+                <label className='label'>Сумма заказа:
                     <input type="number" onChange={(e) => inputSumOfOrderHandler(e)} value={divideToAllInputValue.sumOfOrder} />
                 </label>
-                <label>Процент чаевых:
+                <label className='label'>Процент чаевых:
                     <input type="number" onChange={(e) => inputTipsPercentHandler(e)} value={divideToAllInputValue.tipsPercent} />
                 </label>
-                <label>Доставка:
+                <label className='label'>Доставка:
                     <input type="number" onChange={(e) => inputDeliveryHandler(e)} value={divideToAllInputValue.delivery} />
                 </label>
 

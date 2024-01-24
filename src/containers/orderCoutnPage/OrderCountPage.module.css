@@ -1,0 +1,9 @@
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.mainBillingPage {
+    background-color: #b8b8b8;
+    box-shadow: 10px 5px 5px rgb(137, 137, 137);
+    padding: 5%;
+}

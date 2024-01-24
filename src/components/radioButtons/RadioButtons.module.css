@@ -1,0 +1,11 @@
+.wraper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    padding-bottom: 5%;
+}

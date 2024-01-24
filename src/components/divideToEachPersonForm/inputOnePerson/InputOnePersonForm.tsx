@@ -15,7 +15,7 @@ const InputOnePersonForm: React.FC<IInputOnePersonProps> = ({deletePersonHandler
             <div>
                     <input type="text" onChange={(e) => inputOnePersonNameHanlder(e)}/>
                     <input type="number" onChange={(e) => inputOnePersonSumHanlder(e)} />
-                    <span> Тенге</span>
+                    <span> Тенге </span>
                     <button onClick={() => deletePersonHandler(id)} >X</button>
             </div>
         </div>

@@ -15,9 +15,9 @@ const OrderCountPage: React.FC = () => {
     }
 
 
-
+    const classList = [styles.mainBillingPage, styles.container].join(" ")
     return (
-        <div>
+        <div className={classList}>
             <RadioButtons options={billingType} radioDivideToAll={radioDivideToAll} radioDivideByPerson={radioDivideByPerson} />
             
                 {billingType.divideToAllOption ?

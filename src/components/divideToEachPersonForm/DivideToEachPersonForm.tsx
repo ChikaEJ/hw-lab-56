@@ -10,13 +10,13 @@ interface IDivideToEachPersonFormProps extends IListOfPersonsWhoOrderedProps {
 
 const DivideToEachPersonForm: React.FC<IDivideToEachPersonFormProps> = ({persons, addPerson, divideToEachPersonFormSubmit, inputHandlerDTEFPersent, inputHandlerDTEFDelivery}) => {
     return(
-        <div>
+        <div className={styles.container}>
             <ListOfPersonsWhoOrdered persons={persons} addPerson={addPerson}/>
-            <form onClick={(e) => divideToEachPersonFormSubmit(e)}>
-                <label>Процент чаевых: 
+            <form className={styles.billingType} onClick={(e) => divideToEachPersonFormSubmit(e)}>
+                <label className='label'>Процент чаевых: 
                     <input type="number" onChange={(e) => inputHandlerDTEFPersent(e)}/>
                 </label>
-                <label>Доставка: 
+                <label className='label'>Доставка: 
                     <input type="number" onChange={(e) => inputHandlerDTEFDelivery(e)}/>
                 </label>
                 <button type="submit">Расчитать</button>
