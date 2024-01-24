@@ -19,7 +19,7 @@ const DivideToEachPersonForm: React.FC<IDivideToEachPersonFormProps> = ({persons
                 <label>Доставка: 
                     <input type="number" onChange={(e) => inputHandlerDTEFDelivery(e)}/>
                 </label>
-                <button type="submit"></button>
+                <button type="submit">Расчитать</button>
             </form>
         </div>
     )
