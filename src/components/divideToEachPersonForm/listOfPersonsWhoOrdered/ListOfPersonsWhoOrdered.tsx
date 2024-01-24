@@ -1,10 +1,10 @@
 import InputOnePersonForm, { IInputOnePersonProps } from "../inputOnePerson/InputOnePersonForm";
 import styles from "./DivideToEachPersonForm.module.css";
-interface IDivideToEachPersonProps {
+interface IListOfPersonsWhoOrderedProps {
     persons: IInputOnePersonProps[];
 }
 
-const DivideToEachPersonForm: React.FC<IDivideToEachPersonProps> = ({persons}) => {
+const ListOfPersonsWhoOrdered: React.FC<IListOfPersonsWhoOrderedProps> = ({persons}) => {
 
 
     return(
@@ -22,4 +22,4 @@ const DivideToEachPersonForm: React.FC<IDivideToEachPersonProps> = ({persons}) =
     )
 }
 
-export default DivideToEachPersonForm;
+export default ListOfPersonsWhoOrdered;
