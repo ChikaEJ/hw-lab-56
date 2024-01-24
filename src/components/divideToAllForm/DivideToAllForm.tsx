@@ -32,7 +32,7 @@ const DivideToAllForm: React.FC<IDivideToAllFormProps> = (
                     <input type="number" name="delivery" onChange={(e) => inputDivideToAllHandler(e)} value={divideToAllInputValue.delivery} />
                 </label>
 
-                <input type="button" value="Расчитать" />
+                <button type="submit" > Рассчитать</button>
             </form>
         </div>
     )

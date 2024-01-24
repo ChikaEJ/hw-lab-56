@@ -2,7 +2,7 @@ import DivideToAllForm from "../../components/divideToAllForm/DivideToAllForm";
 import RadioButtons from "../../components/radioButtons/RadioButtons";
 import styles from "./OrderCountPage.module.css"
 import DivideToEachPersonForm from "../../components/divideToEachPersonForm/DivideToEachPersonForm";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const OrderCountPage: React.FC = () => {
 
@@ -13,6 +13,8 @@ const OrderCountPage: React.FC = () => {
         tipsPercent: '',
         delivery: ''
     });
+    const [showInfo, setShowInfo] = useState('hide')
+
     const radioButtonToggle = () => {
         let copyBillingType = billingType;
         copyBillingType = { divideToAllOption: !copyBillingType.divideToAllOption, divideByPersonOption: !copyBillingType.divideByPersonOption }
@@ -42,10 +44,15 @@ const OrderCountPage: React.FC = () => {
                     ...prevData, delivery: value
                 }))
                 break;
-        
+
             default:
                 break;
         }
+    }
+
+    const submitDivideToAllForm: React.FormEventHandler<HTMLFormElement> = (e) => {
+        setShowInfo("show");
+        e.preventDefault();
     }
 
 
@@ -56,7 +63,7 @@ const OrderCountPage: React.FC = () => {
 
             {billingType.divideToAllOption ?
                 < DivideToAllForm
-                    submitDivideToAllForm={() => { }}
+                    submitDivideToAllForm={submitDivideToAllForm}
                     inputDivideToAllHandler={inputDivideToAllHandler}
                     divideToAllInputValue={divideToAllInputsValues} />
                 :
@@ -67,10 +74,10 @@ const OrderCountPage: React.FC = () => {
                     persons={[]}
                     addPerson={() => { }} />
             }
-            <div>
+            <div className={styles[showInfo]}>
                 <h3>Общая сумма: {divideToAllInputsValues.sumOfOrder}</h3>
                 <h3>Количество человек: {divideToAllInputsValues.perosns}</h3>
-                <h3>Каждый платит по: {+divideToAllInputsValues.sumOfOrder/+divideToAllInputsValues.perosns}</h3>
+                <h3>Каждый платит по: {(+divideToAllInputsValues.sumOfOrder + +divideToAllInputsValues.delivery + (+divideToAllInputsValues.sumOfOrder / 100 * +divideToAllInputsValues.tipsPercent)) / +divideToAllInputsValues.perosns}</h3>
             </div>
         </div>
     )
