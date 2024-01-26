@@ -3,7 +3,7 @@ import styles from "./InputOnePersonForm.module.css";
 export interface IInputOnePersonProps {
     deleteFormHandler: (id: number) => void;
     inputOnePersonChangeHanlder: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    inputOnePersonValue: {client: string, sum: number};
+    inputOnePersonValue: {client: string, sum: string};
     id: number;
 }
 
